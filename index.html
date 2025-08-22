@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <h1>Online Exam System</h1>
+                <p>Test your knowledge with our comprehensive exam</p>
+                
+                <div class="exam-info">
+                    <div class="info-card">
+                        <h3>Total Questions</h3>
+                        <span id="total-questions">10</span>
+                    </div>
+                    <div class="info-card">
+                        <h3>Time Per Question</h3>
+                        <span id="time-per-question">60s</span>
+                    </div>
+                    <div class="info-card">
+                        <h3>Total Time</h3>
+                        <span id="total-time">10:00</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="student-name">Enter Your Name:</label>
+                    <input type="text" id="student-name" placeholder="Your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="student-id">Student ID:</label>
+                    <input type="text" id="student-id" placeholder="Your student ID" required>
+                </div>
+                
+                <button id="start-exam-btn" class="btn btn-primary">Start Exam</button>
+            </div>
+        </div>
+
+        <!-- Exam Screen -->
+        <div id="exam-screen" class="screen">
+            <div class="exam-header">
+                <div class="student-info">
+                    <span id="current-student-name"></span>
+                    <span id="current-student-id"></span>
+                </div>
+                <div class="exam-progress">
+                    <span id="question-counter">Question 1 of 10</span>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="timer-container">
+                    <div class="timer">
+                        <span id="question-timer">60</span>s
+                    </div>
+                    <div class="total-timer">
+                        <span id="total-timer">10:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-header">
+                    <h2 id="question-text">Question text will appear here</h2>
+                </div>
+                
+                <div class="options-container" id="options-container">
+                    <!-- Options will be dynamically generated -->
+                </div>
+                
+                <div class="question-actions">
+                    <button id="next-question-btn" class="btn btn-secondary" disabled>Next Question</button>
+                    <button id="submit-exam-btn" class="btn btn-primary" style="display: none;">Submit Exam</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <div class="results-content">
+                <h1>Exam Results</h1>
+                <div class="results-summary">
+                    <div class="result-card">
+                        <h3>Score</h3>
+                        <span id="final-score">0%</span>
+                    </div>
+                    <div class="result-card">
+                        <h3>Correct Answers</h3>
+                        <span id="correct-answers">0/10</span>
+                    </div>
+                    <div class="result-card">
+                        <h3>Time Taken</h3>
+                        <span id="time-taken">0:00</span>
+                    </div>
+                </div>
+                
+                <div class="answers-review" id="answers-review">
+                    <!-- Answer review will be dynamically generated -->
+                </div>
+                
+                <button id="restart-exam-btn" class="btn btn-primary">Take Exam Again</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
