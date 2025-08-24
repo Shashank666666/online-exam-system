@@ -16,6 +16,7 @@
     "nodemon": "^3.0.1"
   },
   "keywords": ["online-exam", "database", "sqlite", "express"],
-  "author": "Your Name",
+  "author": "shashank",
   "license": "MIT"
 }
+
